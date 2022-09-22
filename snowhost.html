@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>snowhost.com</title>
+	<link rel="icon" type="images/x-icon" href="images/Cloud.svg">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+	
+<link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+<link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/snowhost.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2019',  1000,      400],
+          ['2020',  1170,      460],
+          ['2021',  660,       1120],
+          ['2022',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Throughput',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2019',  1000,      400],
+          ['2020',  1170,      460],
+          ['2021',  660,       1120],
+          ['2022',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Traffic',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["", "Density", { role: "style" } ],
+        ["2019", 8.94, "#b87333"],
+        ["2020", 10.49, "silver"],
+        ["2022", 19.30, "gold"],
+        ["2023", 21.45, "color: #e5e4e2"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Incidents",
+        width: 340,
+        height: 340,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+
+
+
+
+
+  <script>
+    google.charts.load('current', {
+    'packages': ['map'],
+    // Note: you will need to get a mapsApiKey for your project.
+    // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+    
+    });
+    google.charts.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['Country', 'Population'],
+        ['China', 'China: 1,363,800,000'],
+        ['India', 'India: 1,242,620,000'],
+        ['US', 'US: 317,842,000'],
+        ['Indonesia', 'Indonesia: 247,424,598'],
+        ['Brazil', 'Brazil: 201,032,714'],
+        ['Pakistan', 'Pakistan: 186,134,000'],
+        ['Nigeria', 'Nigeria: 173,615,000'],
+        ['Bangladesh', 'Bangladesh: 152,518,015'],
+        ['Russia', 'Russia: 146,019,512'],
+        ['Japan', 'Japan: 127,120,000']
+      ]);
+
+    var options = {
+      showTooltip: true,
+      showInfoWindow: true
+    };
+
+    var map = new google.visualization.Map(document.getElementById('map'));
+
+    map.draw(data, options);
+  };
+  </script>
+
+
+</head>
+<body>
+
+  
+ 
+  <div class="grid-item item-2">
+  	<div class="flex-1">
+  <!--<img src="images/Cloud.svg" alt="weather_snowy" class="snow">-->
+<p class="logo">snowhost</p>
+</div>
+
+
+		<input type="search" name="search" autocomplete="on" autofocus id="search" placeholder="search" title="Search">
+
+	
+	<nav class="up">
+		<ul>
+			<div class="connect clearfix flex" >
+			<div class="word" style="flex-grow: 20px;"><span id="connector" class="material-symbols-outlined">cloud</span></div>
+			<div class="link">
+				<li><a href="#" title="connector">connector</a></li>
+
+				<div class="dp-content">
+					<p>1</p>
+					<p >1</p>
+					<p >1</p>
+					<p >1</p>
+					
+				</div>
+			</div>
+</div>
+
+<div class="connect clearfix flex" >
+			<div class="word" style="flex-grow: 20px;"><span id="connector" class="material-symbols-outlined">group</span></div>
+			<div class="link"><li><a href="#" title="User">user</a></li></div>
+</div>
+
+
+<div class="connect clearfix flex" >
+			<div class="word" style="flex-grow: 20px;"><span id="connector" class="material-symbols-outlined">person</span></div>
+			<div class="link"><li><a href="#" title="Role">Role</a></li></div>
+</div>
+
+
+<div class="connect clearfix flex" >
+			<div class="word" style="flex-grow: 20px;"><span id="connector" class="material-symbols-outlined">language</span></div>
+			<div class="link"><li><a href="#" title="Web Proxies">Web proxies</a></li></div>
+
+
+</div>
+<div class="foot-1">
+	<div>
+<div class="connect clearfix flex" >
+			<div class="word" style="flex-grow: 20px;">	<span id="connector" class="material-symbols-outlined">
+support
+</span></div>
+			<div class="link"><li><a href="#" title="Web Proxies">Support</a></li>
+			</div>
+</div>
+
+
+
+	<div>
+<div class="connect clearfix flex" >
+			<div class="word" style="flex-grow: 20px;"><span id="connector" class="material-symbols-outlined">
+settings
+</span></div>
+			<div class="link"><li><a href="#" title="Web Proxies">Settings</a></li>
+			</div>
+</div>
+
+
+<div class="foot-2">
+<div class="flex-2">
+	<img src="images/collins .jpeg" class="dp">
+	<div>
+		<p>Alexandra Neznaeva</p>
+		<small>aneznaeva@snow.com</small>
+	</div>
+	
+</div>
+
+</div>
+
+
+</ul>
+</nav>
+ </div>
+  
+  
+
+</div>
+
+</section>
+
+
+
+<!--<section class="main">-->
+
+	<div class="hhh">
+		<div class="btn">
+			<p class="ccc">Connector</p>
+	<div class="ppp">		
+<div class="btn-1" style="flex-grow: 20px;" >
+			<span id="upload" class="material-symbols-outlined">cloud_upload</span>
+
+				<p class="mm">Import</p>
+				<span class="span-1"></span>
+				<span class="span-2"></span>
+				<span class="span-3"></span>
+		
+					</div>
+
+<div class="btn-2" style="flex-grow: 20px;" >
+
+			<span id="plus" class="material-symbols-outlined">add</span>
+
+				<p class="mn">Add</p>
+			
+					</div>
+		
+	</div>
+</div>
+</div>
+
+
+
+<div class="hhh-2">
+	<div class="manage" flex>
+		<p>Management Portal</p>
+		<p>Monitoring</p>
+		<p>Security <small class="num">16</small></p>
+		<p>Account Settings</p>
+		
+	</div>
+</div>
+
+
+<div class="flex-3 dates">
+	<div class="pad">
+	<div class="months-1"><p>12 months</p></div>
+	<div class="months-2"><p>30 days</p></div>
+	<div class="months-3"><p>7 days</p></div>
+	<div class="months-4"><p>24 hours</p></div>
+</div>
+	
+<div class="flex--">
+<div class="date">
+	<input type="date" name="date" title="Please select date" placeholder="date">
+	
+</div>
+
+
+<div class="filter" style="flex-grow: 20px;" >
+			<span id="import" class="material-symbols-outlined">filter_list</span>
+
+				<p class="mm">Filters</p>
+		
+					</div>
+</div>
+</div>
+
+	
+
+<div class="chart">	
+	<div class="mean">
+<div id="chart_div"></div>
+<div id="curve_chart"></div>
+<div id="columnchart_values"></div>
+</div>
+</div>
+
+
+<section class="map-graph">
+	<table>
+		<!-- use these for header button-->
+		<tr class="head">
+			<th colspan="2" class="table" >Table</th>
+			<div class="table-flex">
+			<th><button class="down"><i id="btn-main" class="fa fa-cloud-download" aria-hidden="true"></i>Download CSV</button></th>
+			<th><button class="ada"><i id="btn-main-2" class="fa fa-plus" aria-hidden="true"></i>add </button></th>
+</div>
+
+<th></th>
+		</tr>
+
+		<tr>
+			<td>Connector</td>
+			<td>Subdomain</td>
+			<td>Description</td>
+			<td>Tags</td>
+		</tr>
+
+		<tr>
+			<td>Headquarters</td>
+			<td>hq.companyabc</td>
+			<td>HQ, New York</td>
+			<td class="office"><p>Office</p></td>
+			<td><span class="material-symbols-outlined">
+more_vert
+</span></td>
+		</tr>
+
+		<tr>
+			<td>Engineering</td>
+			<td>eng.companyabc</td>
+			<td>Dev team</td>
+			<td class="office"><div class="spar"><p>Office</p><span>Remote</span></div></td>
+			<td><span class="material-symbols-outlined">
+more_vert
+</span></td>
+		</tr>
+
+
+		<tr>
+			<td>QA lab</td>
+			<td>qa.companyabc</td>
+			<td>QA VLAN</td>
+			<td class="office"><div class="spar"><p>Office</p><span>Remote</span></div></td>
+			<td><span class="material-symbols-outlined">
+more_vert
+</span></td>
+		</tr>
+
+
+		<tr>
+			<td>Data center</td>
+			<td>data.companyabc</td>
+			<td>Private cloud & AWS</td>
+			<td class="louds"><div class="spar"><p>Cloud</p><span>Servers</span></div></td>
+			<td><span class="material-symbols-outlined">
+more_vert
+</span></td>
+		</tr>
+
+
+		<tr>
+			<td>IoT network</td>
+			<td>iot.companyabc</td>
+			<td>Network for IoT</td>
+			<td class="iot"><div class="spar"><p>IoT Devices</p></div></td>
+			<td><span class="material-symbols-outlined">
+more_vert
+</span></td>
+		</tr>
+
+
+
+		<tr>
+			
+			<td><div class="foot-table"><p class="one">1</p><p>2</p></div></td>
+
+			<td></td>
+			<td></td>
+			<td><button class="btn-foot">Next <i class="fa fa-arrow-right" aria-hidden="true"></i></button></td>
+
+			</td>
+
+		</tr>
+	</table>
+
+
+<div id="map"></div>
+
+	
+</section>
+
+
+</body>
+</html>
